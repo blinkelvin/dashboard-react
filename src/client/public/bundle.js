@@ -27886,8 +27886,7 @@
 			key: "render",
 			value: function render() {
 				console.log(this.props.data);
-				var score = "score type-".concat(this.props.data.type);
-				var title = "score type-".concat(this.props.data.type, " title");
+				var classe = "col-xs-6 col-sm-4 placeholder tab-panel type-".concat(this.props.data.type);
 				var data = this.props.data.items;
 				var result = data.map(function (item) {
 					return _react2.default.createElement(
@@ -27901,7 +27900,7 @@
 				});
 				return _react2.default.createElement(
 					"div",
-					{ className: "col-xs-6 col-sm-4 placeholder tab-panel" },
+					{ className: classe },
 					_react2.default.createElement(
 						"ul",
 						{ className: "nav nav-tabs" },
@@ -27913,12 +27912,12 @@
 								{ href: "#" },
 								_react2.default.createElement(
 									"div",
-									{ className: score },
+									{ className: "score" },
 									this.props.data.count
 								),
 								_react2.default.createElement(
 									"div",
-									{ className: title },
+									{ className: "score title" },
 									this.props.data.label
 								)
 							)

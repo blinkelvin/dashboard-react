@@ -11,14 +11,23 @@ body {
 /*
  * Global add-ons
  */
-.type-1{
+.type-1 .score{
 	color: #E77232;
 }
-.type-2{
+.type-1 .list-group-item:hover{
+	border-left-color: #E77232;
+}
+.type-2 .score{
 	color: #8E44AE;
 }
-.type-3{
+.type-2 .list-group-item:hover{
+	border-left-color: #8E44AE;
+}
+.type-3 .score{
 	color: #16A086;
+}
+.type-3 .list-group-item:hover{
+	border-left-color: #16A086;
 }
 
 .panel-comp .score{
@@ -105,7 +114,12 @@ body {
 }
 
 .tab-panel .list-group-item {
-    padding: 15px 0px;
+    padding: 15px 5px;
+}
+
+.tab-panel .list-group-item:hover {
+    border-left-style: solid;
+    border-left-width: 3px;
 }
 .tab-panel .list-group-item:last-child{
   border-radius: 0; 
