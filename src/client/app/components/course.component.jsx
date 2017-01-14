@@ -1,7 +1,5 @@
 import React, {Component} from "react";
 
-import Panel from './panel.component.jsx'
-
 class Course extends Component {
 	render() {
 		return (		

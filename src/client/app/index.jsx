@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 
 import {Router, Route, browserHistory} from 'react-router';
 
-import Main from './components/main.component.jsx'
+import Main from './shared/main.component.jsx'
 
 
 import Knowledge from './components/knowledge.component.jsx'

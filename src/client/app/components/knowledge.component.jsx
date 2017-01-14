@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-import Panel from './panel.component.jsx'
+import Panel from '../shared/panel.component.jsx'
 
 class Knowledge extends Component {
 	render() {
