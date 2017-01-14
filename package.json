@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack -d --watch",
     "build": "webpack",
-    "serve": "serve ./"
+	"start" : "node index.js"
   },
   "author": "Kelvin Medeiros",
   "license": "ISC",

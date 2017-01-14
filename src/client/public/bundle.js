@@ -91,20 +91,75 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	var data = [{
+		id: 1,
+		type: 1,
+		label: "DONE COURSE",
+		count: 12,
+		items: [{
+			id: 1,
+			title: "Basic for UX Designer"
+		}, {
+			id: 2,
+			title: "10 steps to improve your wireframe"
+		}, {
+			id: 3,
+			title: "A Better Way To Request App Ratings"
+		}, {
+			id: 4,
+			title: "How To Speed Up Your WordPress Website"
+		}]
+	}, {
+		id: 1,
+		type: 2,
+		label: "ASKING QUESTIONS",
+		count: 27,
+		items: [{
+			id: 1,
+			title: "How to make good logo?"
+		}, {
+			id: 2,
+			title: "What are the best mobile apps for ..."
+		}, {
+			id: 3,
+			title: "What's the difference between UI and ..."
+		}, {
+			id: 4,
+			title: "What logos include hidden messages ..."
+		}]
+	}, {
+		id: 1,
+		type: 3,
+		label: "FOLLOWING EXAMS",
+		count: 19,
+		items: [{
+			id: 1,
+			title: "Basic for UX Designer" }, {
+			id: 2,
+			title: "10 steps to improve your wireframe"
+		}, {
+			id: 3,
+			title: "A Better Way To Request App Ratings"
+		}, {
+			id: 4,
+			title: "How To Speed Up Your WordPress Website"
+		}]
+	}];
+	
 	(0, _reactDom.render)(_react2.default.createElement(
-					_reactRouter.Router,
-					{ history: _reactRouter.browserHistory },
-					_react2.default.createElement(
-									_reactRouter.Route,
-									{ component: _mainComponent2.default },
-									_react2.default.createElement(_reactRouter.Route, { path: '/', component: _knowledgeComponent2.default }),
-									_react2.default.createElement(_reactRouter.Route, { path: '/exam', component: _examComponent2.default }),
-									_react2.default.createElement(_reactRouter.Route, { path: '/course', component: _courseComponent2.default }),
-									_react2.default.createElement(_reactRouter.Route, { path: '/qea', component: _qeaComponent2.default }),
-									_react2.default.createElement(_reactRouter.Route, { path: '/news', component: _newsComponent2.default }),
-									_react2.default.createElement(_reactRouter.Route, { path: '/activity', component: _activityComponent2.default }),
-									_react2.default.createElement(_reactRouter.Route, { path: '/friends', component: _friendsComponent2.default })
-					)
+		_reactRouter.Router,
+		{ history: _reactRouter.browserHistory },
+		_react2.default.createElement(
+			_reactRouter.Route,
+			{ component: _mainComponent2.default },
+			_react2.default.createElement(_reactRouter.Route, { path: '/', component: _knowledgeComponent2.default, data: data }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/exam', component: _examComponent2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/course', component: _courseComponent2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/qea', component: _qeaComponent2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/news', component: _newsComponent2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/activity', component: _activityComponent2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/friends', component: _friendsComponent2.default })
+		)
 	), document.getElementById('container'));
 
 /***/ },
@@ -27732,7 +27787,7 @@
   \***********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -27747,6 +27802,8 @@
 	var _panelComponent = __webpack_require__(/*! ../shared/panel.component.jsx */ 239);
 	
 	var _panelComponent2 = _interopRequireDefault(_panelComponent);
+	
+	var _reactRouter = __webpack_require__(/*! react-router */ 178);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -27766,15 +27823,18 @@
 		}
 	
 		_createClass(Knowledge, [{
-			key: "render",
+			key: 'render',
 			value: function render() {
+				// Get data from route props
+				var data = this.props.route.data;
+				var result = data.map(function (item) {
+					return _react2.default.createElement(_panelComponent2.default, { data: item });
+				});
+	
 				return _react2.default.createElement(
-					"div",
-					{ className: "row placeholders" },
-					_react2.default.createElement(_panelComponent2.default, null),
-					_react2.default.createElement(_panelComponent2.default, null),
-					_react2.default.createElement(_panelComponent2.default, null),
-					_react2.default.createElement(_panelComponent2.default, null)
+					'div',
+					{ className: 'row placeholders' },
+					result
 				);
 			}
 		}]);
@@ -27803,6 +27863,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(/*! react-router */ 178);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27823,6 +27885,20 @@
 		_createClass(Panel, [{
 			key: "render",
 			value: function render() {
+				console.log(this.props.data);
+				var score = "score type-".concat(this.props.data.type);
+				var title = "score type-".concat(this.props.data.type, " title");
+				var data = this.props.data.items;
+				var result = data.map(function (item) {
+					return _react2.default.createElement(
+						_reactRouter.Link,
+						{
+							to: "/knowledge/" + item.id,
+							className: "list-group-item",
+							key: item.id },
+						item.title
+					);
+				});
 				return _react2.default.createElement(
 					"div",
 					{ className: "col-xs-6 col-sm-4 placeholder tab-panel" },
@@ -27837,13 +27913,13 @@
 								{ href: "#" },
 								_react2.default.createElement(
 									"div",
-									{ className: "score" },
-									"12"
+									{ className: score },
+									this.props.data.count
 								),
 								_react2.default.createElement(
 									"div",
-									{ className: "title" },
-									"DONE COURSE"
+									{ className: title },
+									this.props.data.label
 								)
 							)
 						)
@@ -27851,31 +27927,7 @@
 					_react2.default.createElement(
 						"ul",
 						{ className: "list-group" },
-						_react2.default.createElement(
-							"li",
-							{ className: "list-group-item" },
-							"Cras justo odio"
-						),
-						_react2.default.createElement(
-							"li",
-							{ className: "list-group-item" },
-							"Dapibus ac facilisis in"
-						),
-						_react2.default.createElement(
-							"li",
-							{ className: "list-group-item" },
-							"Morbi leo risus"
-						),
-						_react2.default.createElement(
-							"li",
-							{ className: "list-group-item" },
-							"Porta ac consectetur ac"
-						),
-						_react2.default.createElement(
-							"li",
-							{ className: "list-group-item" },
-							"Vestibulum at eros"
-						)
+						result
 					)
 				);
 			}
@@ -28032,7 +28084,7 @@
 				return _react2.default.createElement(
 					"h4",
 					null,
-					"Qea"
+					"Q&A"
 				);
 			}
 		}]);

@@ -11,6 +11,23 @@ body {
 /*
  * Global add-ons
  */
+.type-1{
+	color: #E77232;
+}
+.type-2{
+	color: #8E44AE;
+}
+.type-3{
+	color: #16A086;
+}
+
+.panel-comp .score{
+  font-size: 25pt;
+  font-weight: bold;
+}
+.panel-comp .title{
+  font-size: 10pt;
+}
 
 .sub-header {
   padding-bottom: 10px;
@@ -59,7 +76,7 @@ body {
 .profile-list{
 	background-color: #2dcc70!important;
 	font-size: 13;
-	padding: 10px 10px;
+	padding: 10px 10px 9px;
 	vertical-align: middle;
 	color: white;
 }
@@ -86,6 +103,10 @@ body {
   border-top:0;
   border-radius: 0; 
 }
+
+.tab-panel .list-group-item {
+    padding: 15px 0px;
+}
 .tab-panel .list-group-item:last-child{
   border-radius: 0; 
 }
@@ -95,13 +116,6 @@ body {
   background-color: #ECF0F1;
 }
 
-.panel-comp .score{
-  font-size: 25pt;
-  font-weight: bold;
-}
-.panel-comp .title{
-  font-size: 10pt;
-}
 /*
  * Top navigation
  * Hide default border to remove 1px line.
