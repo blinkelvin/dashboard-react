@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 class Panel extends Component {
 	render() {			
 		console.log(this.props.data)
-		const classe = "col-xs-6 col-sm-4 placeholder tab-panel type-".concat(this.props.data.type)
+		const classe = "col-sm-4 placeholder tab-panel type-".concat(this.props.data.type)
 		const data = this.props.data.items;				
 		const result = data.map((item) => {
 			return (

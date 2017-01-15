@@ -27705,69 +27705,93 @@
 					"div",
 					{ className: "nav-bar" },
 					_react2.default.createElement(
-						"ul",
-						{ className: "nav nav-pills" },
+						"div",
+						{ className: "container" },
 						_react2.default.createElement(
-							"li",
-							{ role: "presentation" },
+							"div",
+							{ className: "navbar-header page-scroll" },
 							_react2.default.createElement(
-								_reactRouter.Link,
-								{ activeClassName: "nav-active", to: "/" },
-								"KNOWLEDGE"
+								"button",
+								{ type: "button", className: "navbar-toggle", "data-toggle": "collapse", "data-target": "#bs-example-navbar-collapse-1" },
+								_react2.default.createElement(
+									"span",
+									{ className: "sr-only" },
+									"Toggle navigation"
+								),
+								_react2.default.createElement("span", { className: "icon-bar" }),
+								_react2.default.createElement("span", { className: "icon-bar" }),
+								_react2.default.createElement("span", { className: "icon-bar" })
 							)
 						),
 						_react2.default.createElement(
-							"li",
-							{ role: "presentation" },
+							"div",
+							{ className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1" },
 							_react2.default.createElement(
-								_reactRouter.Link,
-								{ activeClassName: "nav-active", to: "/course" },
-								"COURSE"
-							)
-						),
-						_react2.default.createElement(
-							"li",
-							{ role: "presentation" },
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ activeClassName: "nav-active", to: "/exam" },
-								"EXAM"
-							)
-						),
-						_react2.default.createElement(
-							"li",
-							{ role: "presentation" },
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ activeClassName: "nav-active", to: "/qea" },
-								"Q&A"
-							)
-						),
-						_react2.default.createElement(
-							"li",
-							{ role: "presentation" },
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ activeClassName: "nav-active", to: "/news" },
-								"NEWS"
-							)
-						),
-						_react2.default.createElement(
-							"li",
-							{ role: "presentation" },
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ activeClassName: "nav-active", to: "/activity" },
-								"ACTIVITY"
-							)
-						),
-						_react2.default.createElement(
-							"li",
-							{ role: "presentation" },
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ activeClassName: "nav-active", to: "/friends" },
-								"FRIENDS"
+								"ul",
+								{ className: "nav nav-pills", id: "bs-example-navbar-collapse-1" },
+								_react2.default.createElement(
+									"li",
+									{ role: "presentation" },
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ activeClassName: "nav-active", to: "/" },
+										"KNOWLEDGE"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ role: "presentation" },
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ activeClassName: "nav-active", to: "/course" },
+										"COURSE"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ role: "presentation" },
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ activeClassName: "nav-active", to: "/exam" },
+										"EXAM"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ role: "presentation" },
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ activeClassName: "nav-active", to: "/qea" },
+										"Q&A"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ role: "presentation" },
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ activeClassName: "nav-active", to: "/news" },
+										"NEWS"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ role: "presentation" },
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ activeClassName: "nav-active", to: "/activity" },
+										"ACTIVITY"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									{ role: "presentation" },
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ activeClassName: "nav-active", to: "/friends" },
+										"FRIENDS"
+									)
+								)
 							)
 						)
 					)
@@ -27886,7 +27910,7 @@
 			key: "render",
 			value: function render() {
 				console.log(this.props.data);
-				var classe = "col-xs-6 col-sm-4 placeholder tab-panel type-".concat(this.props.data.type);
+				var classe = "col-sm-4 placeholder tab-panel type-".concat(this.props.data.type);
 				var data = this.props.data.items;
 				var result = data.map(function (item) {
 					return _react2.default.createElement(
