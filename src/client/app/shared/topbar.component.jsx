@@ -4,7 +4,9 @@ class TopBar extends Component {
 	render() {
 		return (				
 			<div className="top-bar">
-				<h4>Teste</h4>
+				<span className="top-icon glyphicon glyphicon-user" aria-hidden="true"></span>
+				<span className="top-icon glyphicon glyphicon-comment" aria-hidden="true"></span>
+				<span className="top-icon glyphicon glyphicon-bell" aria-hidden="true"></span>
 			</div>
        );
 	}

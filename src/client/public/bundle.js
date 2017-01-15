@@ -27554,11 +27554,9 @@
 				return _react2.default.createElement(
 					"div",
 					{ className: "top-bar" },
-					_react2.default.createElement(
-						"h4",
-						null,
-						"Teste"
-					)
+					_react2.default.createElement("span", { className: "top-icon glyphicon glyphicon-user", "aria-hidden": "true" }),
+					_react2.default.createElement("span", { className: "top-icon glyphicon glyphicon-comment", "aria-hidden": "true" }),
+					_react2.default.createElement("span", { className: "top-icon glyphicon glyphicon-bell", "aria-hidden": "true" })
 				);
 			}
 		}]);
@@ -27706,91 +27704,87 @@
 					{ className: "nav-bar" },
 					_react2.default.createElement(
 						"div",
-						{ className: "container" },
+						{ className: "navbar-header page-scroll" },
 						_react2.default.createElement(
-							"div",
-							{ className: "navbar-header page-scroll" },
+							"button",
+							{ type: "button", className: "navbar-toggle", "data-toggle": "collapse", "data-target": "#bs-example-navbar-collapse-1" },
 							_react2.default.createElement(
-								"button",
-								{ type: "button", className: "navbar-toggle", "data-toggle": "collapse", "data-target": "#bs-example-navbar-collapse-1" },
-								_react2.default.createElement(
-									"span",
-									{ className: "sr-only" },
-									"Toggle navigation"
-								),
-								_react2.default.createElement("span", { className: "icon-bar" }),
-								_react2.default.createElement("span", { className: "icon-bar" }),
-								_react2.default.createElement("span", { className: "icon-bar" })
-							)
-						),
+								"span",
+								{ className: "sr-only" },
+								"Toggle navigation"
+							),
+							_react2.default.createElement("span", { className: "icon-bar" }),
+							_react2.default.createElement("span", { className: "icon-bar" }),
+							_react2.default.createElement("span", { className: "icon-bar" })
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1" },
 						_react2.default.createElement(
-							"div",
-							{ className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1" },
+							"ul",
+							{ className: "nav nav-pills", id: "bs-example-navbar-collapse-1" },
 							_react2.default.createElement(
-								"ul",
-								{ className: "nav nav-pills", id: "bs-example-navbar-collapse-1" },
+								"li",
+								{ role: "presentation" },
 								_react2.default.createElement(
-									"li",
-									{ role: "presentation" },
-									_react2.default.createElement(
-										_reactRouter.Link,
-										{ activeClassName: "nav-active", to: "/" },
-										"KNOWLEDGE"
-									)
-								),
+									_reactRouter.Link,
+									{ activeClassName: "nav-active", to: "/" },
+									"KNOWLEDGE"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ role: "presentation" },
 								_react2.default.createElement(
-									"li",
-									{ role: "presentation" },
-									_react2.default.createElement(
-										_reactRouter.Link,
-										{ activeClassName: "nav-active", to: "/course" },
-										"COURSE"
-									)
-								),
+									_reactRouter.Link,
+									{ activeClassName: "nav-active", to: "/course" },
+									"COURSE"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ role: "presentation" },
 								_react2.default.createElement(
-									"li",
-									{ role: "presentation" },
-									_react2.default.createElement(
-										_reactRouter.Link,
-										{ activeClassName: "nav-active", to: "/exam" },
-										"EXAM"
-									)
-								),
+									_reactRouter.Link,
+									{ activeClassName: "nav-active", to: "/exam" },
+									"EXAM"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ role: "presentation" },
 								_react2.default.createElement(
-									"li",
-									{ role: "presentation" },
-									_react2.default.createElement(
-										_reactRouter.Link,
-										{ activeClassName: "nav-active", to: "/qea" },
-										"Q&A"
-									)
-								),
+									_reactRouter.Link,
+									{ activeClassName: "nav-active", to: "/qea" },
+									"Q&A"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ role: "presentation" },
 								_react2.default.createElement(
-									"li",
-									{ role: "presentation" },
-									_react2.default.createElement(
-										_reactRouter.Link,
-										{ activeClassName: "nav-active", to: "/news" },
-										"NEWS"
-									)
-								),
+									_reactRouter.Link,
+									{ activeClassName: "nav-active", to: "/news" },
+									"NEWS"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ role: "presentation" },
 								_react2.default.createElement(
-									"li",
-									{ role: "presentation" },
-									_react2.default.createElement(
-										_reactRouter.Link,
-										{ activeClassName: "nav-active", to: "/activity" },
-										"ACTIVITY"
-									)
-								),
+									_reactRouter.Link,
+									{ activeClassName: "nav-active", to: "/activity" },
+									"ACTIVITY"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ role: "presentation" },
 								_react2.default.createElement(
-									"li",
-									{ role: "presentation" },
-									_react2.default.createElement(
-										_reactRouter.Link,
-										{ activeClassName: "nav-active", to: "/friends" },
-										"FRIENDS"
-									)
+									_reactRouter.Link,
+									{ activeClassName: "nav-active", to: "/friends" },
+									"FRIENDS"
 								)
 							)
 						)
@@ -27910,7 +27904,7 @@
 			key: "render",
 			value: function render() {
 				console.log(this.props.data);
-				var classe = "col-sm-4 placeholder tab-panel type-".concat(this.props.data.type);
+				var classe = "col-md-4 col-xs-12 placeholder tab-panel type-".concat(this.props.data.type);
 				var data = this.props.data.items;
 				var result = data.map(function (item) {
 					return _react2.default.createElement(
@@ -27950,7 +27944,13 @@
 					_react2.default.createElement(
 						"ul",
 						{ className: "list-group" },
-						result
+						result,
+						_react2.default.createElement(
+							"a",
+							{ href: "#", className: "list-group-item" },
+							"Show More",
+							_react2.default.createElement("span", { className: "top-icon glyphicon glyphicon-chevron-down", "aria-hidden": "true" })
+						)
 					)
 				);
 			}

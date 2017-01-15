@@ -48,10 +48,12 @@ body {
 }
 
 .top-bar{
-  padding: 24px;
+  padding: 36px 0 37px 13px;
   border-bottom: 1px solid #dddddd;
 }
-
+.top-icon {
+	padding: 0px 13px;
+}
 .nav-bar{
   /* padding: 5px; */
   border-bottom: 1px solid #dddddd;
@@ -92,13 +94,14 @@ body {
 	padding: 10px 10px 9px;
 	vertical-align: middle;
 	color: white;
+	text-align: center;
 }
 
 .profile-list .pic{
-	width: 48px; 
-	height: 48px; 
+	width: 48px;
+	height: 48px;
 	border-radius: 50%;
-	margin: 10px;
+	margin: 10px 10px 10px 0;
 }
 
 .profile-list .title{
@@ -114,7 +117,15 @@ body {
  
 .tab-panel .list-group-item:first-child{
   border-top:0;
-  border-radius: 0; 
+  border-radius: 0;
+}
+.tab-panel .list-group-item:last-child{
+  /* border-top:0; */
+  border-radius: 0;
+  padding: 8px 10px;
+  text-align: right;
+  font-weight: bold;
+  border-radius: 50%;
 }
 
 .tab-panel .list-group-item {
@@ -126,7 +137,7 @@ body {
     border-left-width: 3px;
 }
 .tab-panel .list-group-item:last-child{
-  border-radius: 0; 
+  border-radius: 0 0 4px 4px;
 }
 
 .components{

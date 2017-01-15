@@ -5,7 +5,6 @@ class NavBar extends Component {
 	render() {
 		return (				
 				<div className="nav-bar" >
-					<div className="container">
 						<div className="navbar-header page-scroll">
 							<button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 								<span className="sr-only">Toggle navigation</span>
@@ -25,7 +24,6 @@ class NavBar extends Component {
 								<li role="presentation"><Link activeClassName="nav-active" to="/friends">FRIENDS</Link></li>
 							</ul>	
 						</div>
-					</div>
 				</div>
        );
 	}
