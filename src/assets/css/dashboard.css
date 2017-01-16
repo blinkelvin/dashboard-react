@@ -136,7 +136,7 @@ body {
 
 .tab-panel .list-group-item:hover {
     border-left-style: solid;
-    border-left-width: 3px;
+    border-left-width: 2px;
 }
 .tab-panel .list-group-item:last-child{
   border-radius: 0 0 4px 4px;
