@@ -4,7 +4,7 @@ class Activity extends Component {
 	render() {
 		return (				
 			<h4>Activity</h4>
-       );
+		);
 	}
 }
 

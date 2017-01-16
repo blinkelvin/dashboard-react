@@ -4,7 +4,7 @@ class Qea extends Component {
 	render() {
 		return (				
 			<h4>Q&A</h4>
-       );
+		);
 	}
 }
 

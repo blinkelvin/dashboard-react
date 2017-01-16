@@ -4,7 +4,7 @@ class Friends extends Component {
 	render() {
 		return (				
 			<h4>Friends</h4>
-       );
+		);
 	}
 }
 

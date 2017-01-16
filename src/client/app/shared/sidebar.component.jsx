@@ -8,7 +8,7 @@ class Sidebar extends Component {
 				<ul className="nav nav-sidebar">
 					<li className="profile-list">
 						<img className="pic" src="./src/assets/img/profile.png"/>
-						<div className="title">HOANG NGUYEN</div>
+						<div className="title">{this.props.name}</div>
 					</li>
 					<li><Link activeClassName="side-active" to="/">DASHBOARD <span className="sr-only">(current)</span></Link></li>
 					<li><Link activeClassName="side-active" to="/course">COURSE</Link></li>

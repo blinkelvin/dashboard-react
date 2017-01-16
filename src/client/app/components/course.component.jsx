@@ -4,7 +4,7 @@ class Course extends Component {
 	render() {
 		return (		
 			<h4>Course</h4>
-       );
+		);
 	}
 }
 

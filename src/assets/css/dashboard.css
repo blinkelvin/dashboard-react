@@ -15,22 +15,22 @@ body {
 	background-color: #34495E;
  }
  
-.type-1 .score{
+.type-course .score{
 	color: #E77232;
 }
-.type-1 .list-group-item:hover{
+.type-course .list-group-item:hover{
 	border-left-color: #E77232;
 }
-.type-2 .score{
+.type-qea .score{
 	color: #8E44AE;
 }
-.type-2 .list-group-item:hover{
+.type-qea .list-group-item:hover{
 	border-left-color: #8E44AE;
 }
-.type-3 .score{
+.type-exam .score{
 	color: #16A086;
 }
-.type-3 .list-group-item:hover{
+.type-exam .list-group-item:hover{
 	border-left-color: #16A086;
 }
 
@@ -73,11 +73,12 @@ body {
 	background-color: #233342;
 }
 
-.nav-bar a{  
+.nav-bar a{
     background-color: white!important;
     color: #384858!important;
     font-weight: bold;
     border-radius: 0!important;
+    border-bottom: 3px solid rgba(255, 255, 255, 0);
 }
 
 .nav-bar a:hover{  
@@ -129,7 +130,8 @@ body {
 }
 
 .tab-panel .list-group-item {
-    padding: 15px 5px;
+    padding: 15px 20px;
+    text-align: left;
 }
 
 .tab-panel .list-group-item:hover {
@@ -138,6 +140,11 @@ body {
 }
 .tab-panel .list-group-item:last-child{
   border-radius: 0 0 4px 4px;
+}
+
+.tab-panel .list-group-item:last-child:hover {
+    border-left-width: 1px;
+    border-color: #dddddd;
 }
 
 .components{

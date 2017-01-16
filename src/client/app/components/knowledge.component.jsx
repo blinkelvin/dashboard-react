@@ -6,11 +6,11 @@ import { Link } from 'react-router';
 
 class Knowledge extends Component {	
 	render() {
-		// Get data from route props
-		const data = this.props.route.data;	
+		const data = this.props.route.data.dashboard;	
+		console.log(this.props.route.data.dashboard);
 		const result = data.map((item) => {
 			return (
-				<Panel data={item}/>
+				<Panel data={item} route={this.props.route.path}/>
 			)
 		});
 		
@@ -18,7 +18,7 @@ class Knowledge extends Component {
 			<div className="row placeholders">		
 				{result}	
 			</div>
-       );
+		);
 	}
 }
 

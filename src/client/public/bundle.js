@@ -61,101 +61,123 @@
 	
 	var _mainComponent2 = _interopRequireDefault(_mainComponent);
 	
-	var _knowledgeComponent = __webpack_require__(/*! ./components/knowledge.component.jsx */ 238);
+	var _knowledgeComponent = __webpack_require__(/*! ./components/knowledge.component.jsx */ 239);
 	
 	var _knowledgeComponent2 = _interopRequireDefault(_knowledgeComponent);
 	
-	var _courseComponent = __webpack_require__(/*! ./components/course.component.jsx */ 240);
+	var _courseComponent = __webpack_require__(/*! ./components/course.component.jsx */ 243);
 	
 	var _courseComponent2 = _interopRequireDefault(_courseComponent);
 	
-	var _examComponent = __webpack_require__(/*! ./components/exam.component.jsx */ 241);
+	var _courseDetailComponent = __webpack_require__(/*! ./components/course-detail.component.jsx */ 244);
+	
+	var _courseDetailComponent2 = _interopRequireDefault(_courseDetailComponent);
+	
+	var _examComponent = __webpack_require__(/*! ./components/exam.component.jsx */ 245);
 	
 	var _examComponent2 = _interopRequireDefault(_examComponent);
 	
-	var _qeaComponent = __webpack_require__(/*! ./components/qea.component.jsx */ 242);
+	var _examDetailComponent = __webpack_require__(/*! ./components/exam-detail.component.jsx */ 246);
+	
+	var _examDetailComponent2 = _interopRequireDefault(_examDetailComponent);
+	
+	var _qeaComponent = __webpack_require__(/*! ./components/qea.component.jsx */ 247);
 	
 	var _qeaComponent2 = _interopRequireDefault(_qeaComponent);
 	
-	var _newsComponent = __webpack_require__(/*! ./components/news.component.jsx */ 243);
+	var _qeaDetailComponent = __webpack_require__(/*! ./components/qea-detail.component.jsx */ 248);
+	
+	var _qeaDetailComponent2 = _interopRequireDefault(_qeaDetailComponent);
+	
+	var _newsComponent = __webpack_require__(/*! ./components/news.component.jsx */ 249);
 	
 	var _newsComponent2 = _interopRequireDefault(_newsComponent);
 	
-	var _activityComponent = __webpack_require__(/*! ./components/activity.component.jsx */ 244);
+	var _activityComponent = __webpack_require__(/*! ./components/activity.component.jsx */ 250);
 	
 	var _activityComponent2 = _interopRequireDefault(_activityComponent);
 	
-	var _friendsComponent = __webpack_require__(/*! ./components/friends.component.jsx */ 245);
+	var _friendsComponent = __webpack_require__(/*! ./components/friends.component.jsx */ 251);
 	
 	var _friendsComponent2 = _interopRequireDefault(_friendsComponent);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var data = [{
+	var data = {
 		id: 1,
-		type: 1,
-		label: "DONE COURSE",
-		count: 12,
-		items: [{
+		name: "HOANG NGUYEN",
+		type: "Student",
+		stars: 3,
+		exp: 8782,
+		dashboard: [{
 			id: 1,
-			title: "Basic for UX Designer"
+			type: "course",
+			label: "DONE COURSE",
+			count: 12,
+			items: [{
+				id: 1,
+				title: "Basic for UX Designer"
+			}, {
+				id: 2,
+				title: "10 steps to improve your wireframe"
+			}, {
+				id: 3,
+				title: "A Better Way To Request App Ratings"
+			}, {
+				id: 4,
+				title: "How To Speed Up Your WordPress Website"
+			}]
 		}, {
-			id: 2,
-			title: "10 steps to improve your wireframe"
-		}, {
-			id: 3,
-			title: "A Better Way To Request App Ratings"
-		}, {
-			id: 4,
-			title: "How To Speed Up Your WordPress Website"
-		}]
-	}, {
-		id: 1,
-		type: 2,
-		label: "ASKING QUESTIONS",
-		count: 27,
-		items: [{
 			id: 1,
-			title: "How to make good logo?"
+			type: "qea",
+			label: "ASKING QUESTIONS",
+			count: 27,
+			items: [{
+				id: 1,
+				title: "How to make good logo?"
+			}, {
+				id: 2,
+				title: "What are the best mobile apps for ..."
+			}, {
+				id: 3,
+				title: "What's the difference between UI and ..."
+			}, {
+				id: 4,
+				title: "What logos include hidden messages ..."
+			}]
 		}, {
-			id: 2,
-			title: "What are the best mobile apps for ..."
-		}, {
-			id: 3,
-			title: "What's the difference between UI and ..."
-		}, {
-			id: 4,
-			title: "What logos include hidden messages ..."
-		}]
-	}, {
-		id: 1,
-		type: 3,
-		label: "FOLLOWING EXAMS",
-		count: 19,
-		items: [{
 			id: 1,
-			title: "Basic for UX Designer" }, {
-			id: 2,
-			title: "10 steps to improve your wireframe"
-		}, {
-			id: 3,
-			title: "A Better Way To Request App Ratings"
-		}, {
-			id: 4,
-			title: "How To Speed Up Your WordPress Website"
+			type: "exam",
+			label: "FOLLOWING EXAMS",
+			count: 19,
+			items: [{
+				id: 1,
+				title: "Basic for UX Designer" }, {
+				id: 2,
+				title: "10 steps to improve your wireframe"
+			}, {
+				id: 3,
+				title: "A Better Way To Request App Ratings"
+			}, {
+				id: 4,
+				title: "How To Speed Up Your WordPress Website"
+			}]
 		}]
-	}];
+	};
 	
 	(0, _reactDom.render)(_react2.default.createElement(
 		_reactRouter.Router,
 		{ history: _reactRouter.browserHistory },
 		_react2.default.createElement(
 			_reactRouter.Route,
-			{ component: _mainComponent2.default },
+			{ component: _mainComponent2.default, data: data },
 			_react2.default.createElement(_reactRouter.Route, { path: '/', component: _knowledgeComponent2.default, data: data }),
 			_react2.default.createElement(_reactRouter.Route, { path: '/exam', component: _examComponent2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/exam/:id', component: _examDetailComponent2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: '/course', component: _courseComponent2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/course/:id', component: _courseDetailComponent2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: '/qea', component: _qeaComponent2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/qea/:id', component: _qeaDetailComponent2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: '/news', component: _newsComponent2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: '/activity', component: _activityComponent2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: '/friends', component: _friendsComponent2.default })
@@ -27346,7 +27368,7 @@
 	
 	var _profilebarComponent2 = _interopRequireDefault(_profilebarComponent);
 	
-	var _navbarComponent = __webpack_require__(/*! ./navbar.component.jsx */ 237);
+	var _navbarComponent = __webpack_require__(/*! ./navbar.component.jsx */ 238);
 	
 	var _navbarComponent2 = _interopRequireDefault(_navbarComponent);
 	
@@ -27373,12 +27395,12 @@
 				return _react2.default.createElement(
 					'div',
 					null,
-					_react2.default.createElement(_sidebarComponent2.default, null),
+					_react2.default.createElement(_sidebarComponent2.default, { name: this.props.route.data.name }),
 					_react2.default.createElement(
 						'div',
 						{ className: 'col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main' },
 						_react2.default.createElement(_topbarComponent2.default, null),
-						_react2.default.createElement(_profilebarComponent2.default, null),
+						_react2.default.createElement(_profilebarComponent2.default, { data: this.props.route.data }),
 						_react2.default.createElement(_navbarComponent2.default, null),
 						_react2.default.createElement(
 							'div',
@@ -27449,7 +27471,7 @@
 							_react2.default.createElement(
 								"div",
 								{ className: "title" },
-								"HOANG NGUYEN"
+								this.props.name
 							)
 						),
 						_react2.default.createElement(
@@ -27630,7 +27652,7 @@
 								_react2.default.createElement(
 									"b",
 									null,
-									"HOANG NGUYEN"
+									this.props.data.name
 								)
 							),
 							_react2.default.createElement(
@@ -27639,12 +27661,13 @@
 								_react2.default.createElement(
 									"div",
 									null,
-									"Student"
+									this.props.data.type
 								),
 								_react2.default.createElement(
 									"div",
 									null,
-									"8,782 exp"
+									this.props.data.exp,
+									" exp"
 								)
 							)
 						)
@@ -27659,7 +27682,8 @@
 	exports.default = ProfileBar;
 
 /***/ },
-/* 237 */
+/* 237 */,
+/* 238 */
 /*!****************************************************!*\
   !*** ./src/client/app/shared/navbar.component.jsx ***!
   \****************************************************/
@@ -27799,7 +27823,7 @@
 	exports.default = NavBar;
 
 /***/ },
-/* 238 */
+/* 239 */
 /*!***********************************************************!*\
   !*** ./src/client/app/components/knowledge.component.jsx ***!
   \***********************************************************/
@@ -27817,7 +27841,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _panelComponent = __webpack_require__(/*! ../shared/panel.component.jsx */ 239);
+	var _panelComponent = __webpack_require__(/*! ../shared/panel.component.jsx */ 240);
 	
 	var _panelComponent2 = _interopRequireDefault(_panelComponent);
 	
@@ -27843,10 +27867,12 @@
 		_createClass(Knowledge, [{
 			key: 'render',
 			value: function render() {
-				// Get data from route props
-				var data = this.props.route.data;
+				var _this2 = this;
+	
+				var data = this.props.route.data.dashboard;
+				console.log(this.props.route.data.dashboard);
 				var result = data.map(function (item) {
-					return _react2.default.createElement(_panelComponent2.default, { data: item });
+					return _react2.default.createElement(_panelComponent2.default, { data: item, route: _this2.props.route.path });
 				});
 	
 				return _react2.default.createElement(
@@ -27863,10 +27889,161 @@
 	exports.default = Knowledge;
 
 /***/ },
-/* 239 */
+/* 240 */
 /*!***************************************************!*\
   !*** ./src/client/app/shared/panel.component.jsx ***!
   \***************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _scoreComponent = __webpack_require__(/*! ./score.component.jsx */ 241);
+	
+	var _scoreComponent2 = _interopRequireDefault(_scoreComponent);
+	
+	var _rowComponent = __webpack_require__(/*! ./row.component.jsx */ 242);
+	
+	var _rowComponent2 = _interopRequireDefault(_rowComponent);
+	
+	var _reactRouter = __webpack_require__(/*! react-router */ 178);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Panel = function (_Component) {
+		_inherits(Panel, _Component);
+	
+		function Panel() {
+			_classCallCheck(this, Panel);
+	
+			return _possibleConstructorReturn(this, (Panel.__proto__ || Object.getPrototypeOf(Panel)).apply(this, arguments));
+		}
+	
+		_createClass(Panel, [{
+			key: 'render',
+			value: function render() {
+				var _this2 = this;
+	
+				var classe = "col-md-4 col-xs-12 placeholder tab-panel type-".concat(this.props.data.type);
+				var data = this.props.data.items;
+				console.log(data);
+				var result = data.map(function (item) {
+					return _react2.default.createElement(_rowComponent2.default, { item: item, type: _this2.props.data.type });
+				});
+	
+				return _react2.default.createElement(
+					'div',
+					{ className: classe },
+					_react2.default.createElement(_scoreComponent2.default, { count: this.props.data.count, label: this.props.data.label }),
+					_react2.default.createElement(
+						'ul',
+						{ className: 'list-group' },
+						result,
+						_react2.default.createElement(
+							_reactRouter.Link,
+							{ to: this.props.data.type, className: 'list-group-item' },
+							'Show More',
+							_react2.default.createElement('span', { className: 'top-icon glyphicon glyphicon-chevron-down', 'aria-hidden': 'true' })
+						)
+					)
+				);
+			}
+		}]);
+	
+		return Panel;
+	}(_react.Component);
+	
+	exports.default = Panel;
+
+/***/ },
+/* 241 */
+/*!***************************************************!*\
+  !*** ./src/client/app/shared/score.component.jsx ***!
+  \***************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Score = function (_Component) {
+		_inherits(Score, _Component);
+	
+		function Score() {
+			_classCallCheck(this, Score);
+	
+			return _possibleConstructorReturn(this, (Score.__proto__ || Object.getPrototypeOf(Score)).apply(this, arguments));
+		}
+	
+		_createClass(Score, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"ul",
+					{ className: "nav nav-tabs" },
+					_react2.default.createElement(
+						"li",
+						{ role: "presentation", className: "panel-comp active" },
+						_react2.default.createElement(
+							"a",
+							{ href: "#" },
+							_react2.default.createElement(
+								"div",
+								{ className: "score" },
+								this.props.count
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "score title" },
+								this.props.label
+							)
+						)
+					)
+				);
+			}
+		}]);
+	
+		return Score;
+	}(_react.Component);
+	
+	exports.default = Score;
+
+/***/ },
+/* 242 */
+/*!*************************************************!*\
+  !*** ./src/client/app/shared/row.component.jsx ***!
+  \*************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27891,78 +28068,36 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var Panel = function (_Component) {
-		_inherits(Panel, _Component);
+	var Row = function (_Component) {
+		_inherits(Row, _Component);
 	
-		function Panel() {
-			_classCallCheck(this, Panel);
+		function Row() {
+			_classCallCheck(this, Row);
 	
-			return _possibleConstructorReturn(this, (Panel.__proto__ || Object.getPrototypeOf(Panel)).apply(this, arguments));
+			return _possibleConstructorReturn(this, (Row.__proto__ || Object.getPrototypeOf(Row)).apply(this, arguments));
 		}
 	
-		_createClass(Panel, [{
+		_createClass(Row, [{
 			key: "render",
 			value: function render() {
-				console.log(this.props.data);
-				var classe = "col-md-4 col-xs-12 placeholder tab-panel type-".concat(this.props.data.type);
-				var data = this.props.data.items;
-				var result = data.map(function (item) {
-					return _react2.default.createElement(
-						_reactRouter.Link,
-						{
-							to: "/knowledge/" + item.id,
-							className: "list-group-item",
-							key: item.id },
-						item.title
-					);
-				});
 				return _react2.default.createElement(
-					"div",
-					{ className: classe },
-					_react2.default.createElement(
-						"ul",
-						{ className: "nav nav-tabs" },
-						_react2.default.createElement(
-							"li",
-							{ role: "presentation", className: "panel-comp active" },
-							_react2.default.createElement(
-								"a",
-								{ href: "#" },
-								_react2.default.createElement(
-									"div",
-									{ className: "score" },
-									this.props.data.count
-								),
-								_react2.default.createElement(
-									"div",
-									{ className: "score title" },
-									this.props.data.label
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"ul",
-						{ className: "list-group" },
-						result,
-						_react2.default.createElement(
-							"a",
-							{ href: "#", className: "list-group-item" },
-							"Show More",
-							_react2.default.createElement("span", { className: "top-icon glyphicon glyphicon-chevron-down", "aria-hidden": "true" })
-						)
-					)
+					_reactRouter.Link,
+					{
+						to: this.props.type + "/" + this.props.item.id,
+						className: "list-group-item",
+						key: this.props.item.id },
+					this.props.item.title
 				);
 			}
 		}]);
 	
-		return Panel;
+		return Row;
 	}(_react.Component);
 	
-	exports.default = Panel;
+	exports.default = Row;
 
 /***/ },
-/* 240 */
+/* 243 */
 /*!********************************************************!*\
   !*** ./src/client/app/components/course.component.jsx ***!
   \********************************************************/
@@ -28014,7 +28149,60 @@
 	exports.default = Course;
 
 /***/ },
-/* 241 */
+/* 244 */
+/*!***************************************************************!*\
+  !*** ./src/client/app/components/course-detail.component.jsx ***!
+  \***************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var CourseDetail = function (_Component) {
+		_inherits(CourseDetail, _Component);
+	
+		function CourseDetail() {
+			_classCallCheck(this, CourseDetail);
+	
+			return _possibleConstructorReturn(this, (CourseDetail.__proto__ || Object.getPrototypeOf(CourseDetail)).apply(this, arguments));
+		}
+	
+		_createClass(CourseDetail, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"h4",
+					null,
+					"Course ",
+					this.props.params.id
+				);
+			}
+		}]);
+	
+		return CourseDetail;
+	}(_react.Component);
+	
+	exports.default = CourseDetail;
+
+/***/ },
+/* 245 */
 /*!******************************************************!*\
   !*** ./src/client/app/components/exam.component.jsx ***!
   \******************************************************/
@@ -28066,7 +28254,60 @@
 	exports.default = Exam;
 
 /***/ },
-/* 242 */
+/* 246 */
+/*!*************************************************************!*\
+  !*** ./src/client/app/components/exam-detail.component.jsx ***!
+  \*************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var ExamDetail = function (_Component) {
+		_inherits(ExamDetail, _Component);
+	
+		function ExamDetail() {
+			_classCallCheck(this, ExamDetail);
+	
+			return _possibleConstructorReturn(this, (ExamDetail.__proto__ || Object.getPrototypeOf(ExamDetail)).apply(this, arguments));
+		}
+	
+		_createClass(ExamDetail, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"h4",
+					null,
+					"Exam ",
+					this.props.params.id
+				);
+			}
+		}]);
+	
+		return ExamDetail;
+	}(_react.Component);
+	
+	exports.default = ExamDetail;
+
+/***/ },
+/* 247 */
 /*!*****************************************************!*\
   !*** ./src/client/app/components/qea.component.jsx ***!
   \*****************************************************/
@@ -28118,7 +28359,60 @@
 	exports.default = Qea;
 
 /***/ },
-/* 243 */
+/* 248 */
+/*!************************************************************!*\
+  !*** ./src/client/app/components/qea-detail.component.jsx ***!
+  \************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var QeaDetail = function (_Component) {
+		_inherits(QeaDetail, _Component);
+	
+		function QeaDetail() {
+			_classCallCheck(this, QeaDetail);
+	
+			return _possibleConstructorReturn(this, (QeaDetail.__proto__ || Object.getPrototypeOf(QeaDetail)).apply(this, arguments));
+		}
+	
+		_createClass(QeaDetail, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"h4",
+					null,
+					"Q&A ",
+					this.props.params.id
+				);
+			}
+		}]);
+	
+		return QeaDetail;
+	}(_react.Component);
+	
+	exports.default = QeaDetail;
+
+/***/ },
+/* 249 */
 /*!******************************************************!*\
   !*** ./src/client/app/components/news.component.jsx ***!
   \******************************************************/
@@ -28170,7 +28464,7 @@
 	exports.default = News;
 
 /***/ },
-/* 244 */
+/* 250 */
 /*!**********************************************************!*\
   !*** ./src/client/app/components/activity.component.jsx ***!
   \**********************************************************/
@@ -28222,7 +28516,7 @@
 	exports.default = Activity;
 
 /***/ },
-/* 245 */
+/* 251 */
 /*!*********************************************************!*\
   !*** ./src/client/app/components/friends.component.jsx ***!
   \*********************************************************/
