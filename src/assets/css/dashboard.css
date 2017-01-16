@@ -64,7 +64,7 @@ body {
     background-color: white!important;
     color: #384858!important;
     font-weight: bold;
-    border-bottom: 3px solid #27AE61;
+    border-bottom: 3px solid #27AE61!important;
     border-radius: 0!important;
 }
 
